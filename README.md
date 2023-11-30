@@ -1,7 +1,7 @@
 # Chiffrement-de-Cesar
 CHIFFREMENT DE CESAR
-
-Ce code permet de chiffrer et de déchiffrer des messages en utilisant un chiffrement par décalage.
+Ce code écrit en python permet de chiffrer et de déchiffrer des messages en utilisant un chiffrement par décalage. Pour l'exécuter on rentre dans le répertoire du projet à
+l'aide de la commande "cd". Ensuite on exécute la commande python suivi du nom du fichier.
 
 Principe du chiffrement par décalage
 Le chiffrement par décalage est un chiffrement par substitution simple. Il consiste à remplacer chaque lettre du message clair par une autre lettre décalée d’un certain nombre de positions dans l’alphabet.
@@ -33,11 +33,8 @@ message_chiffre= str(input('Entrer le message à décrypter:'))
 print('Votre message décrypté est:' , message_chiffre)
 
 **Sortie**
-
-```
 Message chiffré : Erqmrxu wrxw oh prqgh !
 Message clair: Bonjour tout le monde !
-```
 
 **Explication**
 
