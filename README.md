@@ -1,52 +1,71 @@
-# Chiffrement-de-Cesar
-CHIFFREMENT DE CESAR
+CHIFFREMENT AFFINE
 
-Ce code permet de chiffrer et de déchiffrer des messages en utilisant un chiffrement par décalage.
+**Description**
 
-Principe du chiffrement par décalage
-Le chiffrement par décalage est un chiffrement par substitution simple. Il consiste à remplacer chaque lettre du message clair par une autre lettre décalée d’un certain nombre de positions dans l’alphabet.
+Ce code permet de crypter ou de décrypter un message en utilisant un chiffrement à décalage. Le chiffrement à décalage est un type de chiffrement simple qui consiste à remplacer chaque lettre du message clair par une autre lettre décalée d’un certain nombre de positions dans l’alphabet.
 
-Utilisation du code
-Pour utiliser le code, vous devez d’abord entrer le message que vous souhaitez chiffrer ou déchiffrer. Le code est déjà implémenté avec le décalage(3).
-Le code affichera le message chiffré ou déchiffré.
+**Utilisation**
+
+Pour utiliser ce code, vous devez d’abord saisir le choix que vous souhaitez effectuer :
+
+
+Tapez 1 pour crypter et 2 pour décrypter :
+
+Si vous choisissez de crypter un message, vous devez ensuite saisir le message clair et les clés de chiffrement. Les clés de chiffrement sont deux nombres entiers. La première clé de chiffrement, ‘cle1’, représente le nombre de positions à décaler vers l’avant. La seconde clé de chiffrement, ‘cle2’, représente un décalage supplémentaire qui peut être appliqué à la fin du processus de cryptage ou de décryptage.
+
+```
+Entrer le message à crypter :
+Entrer la première clé de chiffrement (il doit être premier avec 26) :
+Entrer la seconde clé de chiffrement :
+```
+Le message crypté est ensuite affiché à l’écran.
+
+Si vous choisissez de décrypter un message, vous devez ensuite saisir le message crypté et la première clé de chiffrement.
+
+```
+Entrer le message à décrypter :
+Entrer la première clé de chiffrement (il doit être premier avec 26) :
+Entrer la seconde clé de chiffrement :
+```
+
+Le message décrypté est ensuite affiché à l’écran.
 
 **Exemples**
 
-**Chiffrement**
-Message_clair = “Bonjour tout le monde !”
-Decalage = 3
+**Cryptage**
 
-message_clair= str(input('Entrer le message à crypter:'))
-print('Votre message crypte est:' , message_chiffre) 
-
-
-**Sortie**
-Message clair : Bonjour tout le monde !
-Message chiffré : Erqmrxu wrxw oh prqgh !
+```
+Tapez 1 pour crypter et 2 pour décrypter :
+1
+Entrer le message à crypter :
+Bonjour
+Entrer la première clé de chiffrement (il doit être premier avec 26) :
+3
+Entrer la seconde clé de chiffrement :
+5
+Votre message crypté est :
+ivsgvne 
 
 **Déchiffrement**
 
-Message_chiffre = “Erqmrxu wrxw oh prqgh !”
-Decalage = 3
-
-message_chiffre= str(input('Entrer le message à décrypter:'))
-print('Votre message décrypté est:' , message_chiffre)
-
-**Sortie**
-
 ```
-Message chiffré : Erqmrxu wrxw oh prqgh !
-Message clair: Bonjour tout le monde !
+Tapez 1 pour crypter et 2 pour décrypter :
+2
+Entrer le message à décrypter :
+ivsgvne 
+Entrer la première clé de chiffrement (il doit être premier avec 26) :
+3
+Entrer la seconde clé de chiffrement :
+5
+Votre message décrypté est :
+Bonjour
 ```
 
-**Explication**
+**Fonctionnement**
 
-Dans l’exemple ci-dessus, le message clair est “Bonjour tout le monde !”. Le décalage est de 3.
+Le code fonctionne comme suit :
 
-Pour chiffrer le message, chaque lettre est remplacée par la lettre décalée de 3 positions dans l’alphabet. Par exemple, la lettre “B” est remplacée par la lettre “D”.
-
-Le message chiffré est donc “Erqmrxu wrxw oh prqgh !”.
-
-Pour déchiffrer le message, chaque lettre est remplacée par la lettre décalée de 3 positions dans l’alphabet inverse. Par exemple, la lettre “D” est remplacée par la lettre “B”.
-
-Le message clair est donc “Bonjour tout le monde !”.
+1. La fonction ‘math.gcd()’est utilisée pour vérifier que la première clé de chiffrement est premier avec 26. Un nombre premier est un nombre qui n’a que deux diviseurs : 1 et lui-même. Si la première clé de chiffrement n’est pas premier avec 26, l’utilisateur est prié d’entrer une nouvelle valeur valeur jusqu’à ce que le clé soit premier avec 26
+2. Si la première clé de chiffrement est premier avec 26, alors le message clair est crypté en remplaçant chaque lettre par une autre lettre décalée d’un certain nombre de positions dans l’alphabet.
+3. La fonction ‘pow()’est utilisée pour calculer l’inverse de la première clé de chiffrement. L’inverse d’un nombre est un autre nombre qui, multiplié par le premier nombre, donne 1. L’inverse de la première clé de chiffrement est utilisé pour décrypter le message.
+4. Si le choix de l’utilisateur est 2, alors le message crypté est déchiffré en remplaçant chaque lettre par une autre lettre décalée d’un certain nombre de positions dans l’alphabet, en utilisant l’inverse de la première clé de chiffrement.
